@@ -29,62 +29,26 @@ const int MOD = 1000000007;
 const char nl = '\n';
  
 /* ---------- Code here ---------- */
- 
+
 void solve() {
     int n, m; cin >> n >> m;
-    vi tickets(n), customers(m);
-    feach (x, tickets) cin >> x;
-    feach (x, customers) cin >> x;
-    map<int, pair<int, int>> result;
-    FOR (i, 0, m){
-        result.insert({customers[i], {i, -1}});
+    vi tickets(n);
+    multiset<ll> ms;
+    FOR(i, 0, n) {
+        ll x; cin >> x;
+        ms.insert(x);
     }
-    sort (all(tickets), greater());
-    sort (all(result), greater());
-
-    auto it = result.begin();
-
-    int j=n-1;
-    while(it!=result.end() && j<m){
-        while(it->first<tickets[j] && j<m) j++;
-        if (j<m){
-            result[it->first].second = tickets[j];
-        }
-        it++;
+    FOR(i, 0, m){
+        ll t; cin >> t;
+		auto it = ms.upper_bound(t);
+		if (it==ms.begin()){
+			cout << -1 << "\n";
+		}
+		else{
+			cout << *(--it) << "\n";
+			ms.erase(it);
+		}
     }
-
-    vi res(m);
-    it = result.begin();
-    FOR (i, 0, m){
-        res[it->second.first] = it->second.second;
-        it++;
-    }
-
-    feach (x, res) cout << x << nl;
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
  
 /* ---------- Main here ---------- */

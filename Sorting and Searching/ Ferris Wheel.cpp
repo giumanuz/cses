@@ -31,28 +31,36 @@ const char nl = '\n';
 /* ---------- Code here ---------- */
  
 void solve() {
-    ll n, m, k; cin >> n >> m >> k;
-    vll a(n), b(m);
-    feach(x, a) cin >> x;
-    feach(x, b) cin >> x;
-    sort(all(a));
-    sort(all(b));
-    ll ris=0;
-    int i=0, j=0;
+    ll n, k; cin >> n >> k;
+    vll a(n);
+    feach (x, a) cin >> x;
+    sort(all(a), greater());
 
-    while (i<a.size() && j<b.size()){
-        if (b[j]-k<=a[i] && a[i]<=b[j]+k){
-            ris++;
-            i++;
-            j++;
+    ll ris=0;
+    ll somma=0;
+    FOR (i, 0, n){
+        if (somma+a[i]<=k){
+            somma+=a[i];
         }
-        else if (a[i]>b[j]+k) j++;
-        else i++;
-        
+        else{
+            ris++;
+            somma=0;
+        }
     }
 
+    cout << ris<< nl;
 
-    cout << ris << nl;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
