@@ -1,4 +1,4 @@
-.vscode
-*.dSyM
-a
-.DS_Store
+*/.vscode
+*/*.dSyM
+*/a
+*/.DS_Store
