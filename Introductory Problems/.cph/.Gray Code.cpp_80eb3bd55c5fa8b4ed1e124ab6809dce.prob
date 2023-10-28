@@ -1,0 +1,1 @@
+{"name":"Local: Gray Code","url":"/Users/giulio/Mio_Computer/cses/Introductory Problems/Gray Code.cpp","tests":[{"id":1690117998645,"input":"2","output":"00\n01\n11\n10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/giulio/Mio_Computer/cses/Introductory Problems/Gray Code.cpp","group":"local","local":true}
