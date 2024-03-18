@@ -1,2 +1,6 @@
-*
-!*.cpp
+**/*.bin
+**/*.out
+**/*.dSYM
+**/*.cph
+.vscode
+**/.DS_Store
